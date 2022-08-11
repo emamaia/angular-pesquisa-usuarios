@@ -12,6 +12,9 @@ export class PesquisaUsuarioComponent implements OnInit {
   listaPaises = [];
   listaGender = [];
 
+  valorBusca: any;
+ 
+
   
   constructor(
    private pesquisaUsuarioService: PesquisaUsuarioService
@@ -28,6 +31,13 @@ export class PesquisaUsuarioComponent implements OnInit {
 
   
   onSubmit(form) {
+    console.log(form.value)
+          this.valorBusca = form.value.true
+      console.log(this.valorBusca)     
+    
+  }
+
+  onCheckBoxChange($event){
     
   }
 

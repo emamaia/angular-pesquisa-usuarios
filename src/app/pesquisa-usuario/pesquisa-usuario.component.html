@@ -1,6 +1,6 @@
 <section class="box__form">
 
-    <form (ngSubmit)="onSubmit('form')" class="formulario">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario">
         <div class="gender__box">
             <h3 class="pt-4">Selecione o gênero</h3>
             <div class="form-check" ngClass="aplicaCssErro('gender')">
@@ -8,7 +8,7 @@
                     <div id="gender" class="row">
                         <div *ngFor="let item of listaGender">
                             <label for="{{item.id}}" class="radio-inline">
-                                <input class="form-check-input" [value]="item.nome" type="radio" id="{{item.id}}">
+                                <input class="form-check-input" [value]="item.nome" type="radio" id="{{item.id}}" name="gender" ngModel>
                                 {{item.nome}}
                             </label>
                         </div>                        
@@ -20,7 +20,7 @@
         <div class="country__box" >
             <h3 class="pt-3">Selecione o país:</h3>
             <div *ngFor="let item of listaPaises" class="p-1">
-                <input type="checkbox" id="{{item.id}}" [value]="item.nome">
+                <input type="checkbox" id="{{item.id}}" [value]="item.nome" name="country" ngModel>
                 <label for="{{item.id}}">{{item.nome}}</label>
             </div>
         </div>
