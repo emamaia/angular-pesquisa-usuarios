@@ -14,11 +14,12 @@ export class PesquisaUsuarioComponent implements OnInit {
 
   valorBusca: any;
   usuarios: any;
-  listaUsuarios = []
+  listaUsuarios = [];
 
   escondeSection = true;
 
-  listaUsers = []
+  listaUsers = [];
+  
   
   constructor(
     private pesquisaUsuarioService: PesquisaUsuarioService,
@@ -31,12 +32,7 @@ export class PesquisaUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.listaPaises = this.pesquisaUsuarioService.getListaPaises();
     this.listaGender = this.pesquisaUsuarioService.getListaGender();
-    this.pesquisaUsuarioService.getPesquisa()
-      .subscribe(response => {
-        this.usuarios = response
-        this.listaUsuarios = this.usuarios.results
-        console.log(this.listaUsuarios)
-      })
+ 
   }
 
 
@@ -49,27 +45,36 @@ export class PesquisaUsuarioComponent implements OnInit {
       type: key,
       value: this.valorBusca[key]
     }))
+    console.log('USER', this.listaUsers);
 
-    console.log('USER', this.listaUsers)
+    this.pesquisaUsuarioService.filtroApi(this.extrairFiltros())
+      .subscribe(response => {
+        this.usuarios = response
+        this.listaUsuarios = this.usuarios.results
+        console.log(this.listaUsuarios)
+      })
     
   }
 
-  onCheckBoxChange(event) {
-    console.log(event.target.value)
-   
+  extrairFiltros(){
+    let filtro = '';
+    if(this.listaUsers[0].value !== '') {
+      filtro = filtro + '&gender=' +  this.listaUsers[0].value;
+    }
+    let temPais = false
+    for (let i = 1; i < this.listaUsers.length; i++) {
+      if(this.listaUsers[i].value) {
+        filtro = filtro + (temPais ? `,${this.listaUsers[i].type}`: `&nat=${this.listaUsers[i].type}`)
+        temPais = true;
+      }
+     
+   }
+
+    
+    return filtro
   }
 
-  // tranformaArray(valorInput){
-  // let filterUser =[]
-  //  for(key of Object.keys(valorInput)){
-  //   filterUser.push(
-  //     [key, valorInput[key]]
-  //   )
-  //  }
-  //  return filterUser
-  // }
-    
   
 
-
+ 
 }

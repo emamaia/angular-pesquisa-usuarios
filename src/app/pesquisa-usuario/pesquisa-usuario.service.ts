@@ -10,6 +10,10 @@ export class PesquisaUsuarioService {
     private http: HttpClient  
   ) { }
   
+  filtroApi(value){
+    return this.http.get(`https://randomuser.me/api/?results=20${value}`)
+  }
+  
   getPesquisa(){
     return this.http.get('https://randomuser.me/api/?results=20')
     }
@@ -23,11 +27,11 @@ export class PesquisaUsuarioService {
   }
   getListaPaises(){
     return [
-      {'nome': 'Austrália', 'valor': 'Australia'},
-      {'nome': 'Brasil', 'valor': 'Brazil'},
-      {'nome': 'Canadá', 'valor': 'Canada'},
-      {'nome': 'França', 'valor': 'France'},
-      {'nome': 'Estados Unidos', 'valor': 'United States'} 
+      {'nome': 'Austrália', 'valor': 'au'},
+      {'nome': 'Brasil', 'valor': 'br'},
+      {'nome': 'Canadá', 'valor': 'ca'},
+      {'nome': 'França', 'valor': 'fr'},
+      {'nome': 'Estados Unidos', 'valor': 'us'} 
     ]
   }
 

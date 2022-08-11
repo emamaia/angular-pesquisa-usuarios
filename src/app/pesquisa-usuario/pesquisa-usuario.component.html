@@ -21,8 +21,8 @@
         <div class="country__box" >
             <h3 class="pt-3">Selecione o país:</h3>
             <div *ngFor="let item of listaPaises" class="p-1">
-                <input type="checkbox" id="{{item.valor}}" [value]="item.valor"
-                 name={{item.valor}} ngModel (change)="onCheckBoxChange($event)">
+                <input type="checkbox" id="{{item.valor}}" 
+                 name={{item.valor}} ngModel>
                 <label for="{{item.valor}}">{{item.nome}}</label>
             </div>
         </div>
@@ -32,7 +32,7 @@
     </form>       
 </section>
 
-<section [ngClass]="escondeSection ? 'hidden' : 'show'" class="box__users">
+<section  class="box__users">
     <div class="box__users-card" *ngFor="let item of listaUsuarios">
         <img class="user__image" src="{{item.picture.medium}}" alt="Imagem do Usuário">
         <h3>Nome: {{item.name.title}} {{item.name.first}} {{item.name.last}}</h3>
