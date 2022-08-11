@@ -14,14 +14,12 @@ export class PesquisaUsuarioComponent implements OnInit {
 
   valorBusca: any;
  
-
-  
   constructor(
-   private pesquisaUsuarioService: PesquisaUsuarioService
-   
-  ) {
-     console.log(pesquisaUsuarioService);
+      private pesquisaUsuarioService: PesquisaUsuarioService, 
       
+  ) {
+    console.log(pesquisaUsuarioService);
+   
   }
 
   ngOnInit(): void {
@@ -29,17 +27,17 @@ export class PesquisaUsuarioComponent implements OnInit {
     this.listaGender = this.pesquisaUsuarioService.getListaGender();
   }
 
-  
+
   onSubmit(form) {
-    console.log(form.value)
-          this.valorBusca = form.value.true
-      console.log(this.valorBusca)     
-    
+      this.valorBusca = form.value;
+     console.log(this.valorBusca)
+     
   }
 
-  onCheckBoxChange($event){
-    
+  onCheckBoxChange(event) {
+    console.log(event.target.value)
+ 
   }
-
+  
 
 }

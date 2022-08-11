@@ -1,5 +1,6 @@
 <section class="box__form">
 
+        
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario">
         <div class="gender__box">
             <h3 class="pt-4">Selecione o gênero</h3>
@@ -7,8 +8,8 @@
                 <label class="form-check-label" for="gender">
                     <div id="gender" class="row">
                         <div *ngFor="let item of listaGender">
-                            <label for="{{item.id}}" class="radio-inline">
-                                <input class="form-check-input" [value]="item.nome" type="radio" id="{{item.id}}" name="gender" ngModel>
+                            <label for="{{item.valor}}" class="radio-inline">
+                                <input class="form-check-input" [value]="item.valor" type="radio" id="{{item.valor}}" name="gender" ngModel>
                                 {{item.nome}}
                             </label>
                         </div>                        
@@ -20,8 +21,9 @@
         <div class="country__box" >
             <h3 class="pt-3">Selecione o país:</h3>
             <div *ngFor="let item of listaPaises" class="p-1">
-                <input type="checkbox" id="{{item.id}}" [value]="item.nome" name="country" ngModel>
-                <label for="{{item.id}}">{{item.nome}}</label>
+                <input type="checkbox" id="{{item.valor}}" [value]="item.valor"
+                 name={{item.valor}} ngModel (change)="onCheckBoxChange($event)">
+                <label for="{{item.valor}}">{{item.nome}}</label>
             </div>
         </div>
 
@@ -29,4 +31,5 @@
 
     </form>
 
+       
 </section>

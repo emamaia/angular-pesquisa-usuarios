@@ -10,18 +10,18 @@ export class PesquisaUsuarioService {
 
   getListaGender(){
    return [
-      {'nome': 'Masculino', 'id': 'm'},
-      {'nome': 'Feminino', 'id': 'f'},
-      {'nome': 'Ambos', 'id': 'a'}
+      {'nome': 'Masculino', 'valor': 'male'},
+      {'nome': 'Feminino', 'valor': 'female'},
+      {'nome': 'Ambos', 'valor': 'ambos'}
      ]
   }
   getListaPaises(){
     return [
-      {'nome': 'Austrália', 'id': 'a'},
-      {'nome': 'Brasil', 'id': 'a'},
-      {'nome': 'Canadá', 'id': 'c'},
-      {'nome': 'França', 'id': 'f'},
-      {'nome': 'Estados Unidos', 'id': 'e'} 
+      {'nome': 'Austrália', 'valor': 'Australia'},
+      {'nome': 'Brasil', 'valor': 'Brazil'},
+      {'nome': 'Canadá', 'valor': 'Canada'},
+      {'nome': 'França', 'valor': 'France'},
+      {'nome': 'Estados Unidos', 'valor': 'United States'} 
     ]
   }
 

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,14 +14,17 @@ import { PesquisaUsuarioComponent } from './pesquisa-usuario/pesquisa-usuario.co
     AppComponent,
     HeaderComponent,
     PesquisaUsuarioComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
