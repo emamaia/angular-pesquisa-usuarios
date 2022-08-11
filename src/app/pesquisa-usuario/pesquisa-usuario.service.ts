@@ -11,7 +11,7 @@ export class PesquisaUsuarioService {
   ) { }
   
   getPesquisa(){
-    return this.http.get('https://randomuser.me/api/')
+    return this.http.get('https://randomuser.me/api/?results=20')
     }
 
   getListaGender(){

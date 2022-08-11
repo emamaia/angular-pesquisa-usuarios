@@ -14,6 +14,7 @@ export class PesquisaUsuarioComponent implements OnInit {
 
   valorBusca: any;
   usuarios: any;
+  listaUsuarios = []
 
    constructor(
       private pesquisaUsuarioService: PesquisaUsuarioService, 
@@ -28,8 +29,9 @@ export class PesquisaUsuarioComponent implements OnInit {
     this.listaGender = this.pesquisaUsuarioService.getListaGender();
     this.pesquisaUsuarioService.getPesquisa()
     .subscribe(response => {
-     this.usuarios = response;
-     console.log(this.usuarios.results)
+     this.usuarios = response
+     this.listaUsuarios = this.usuarios.results
+     console.log(this.listaUsuarios)
     })
   }
   

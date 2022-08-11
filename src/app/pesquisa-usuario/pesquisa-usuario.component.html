@@ -1,7 +1,7 @@
 <section class="box__form">
 
         
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario ">
         <div class="gender__box">
             <h3 class="pt-4">Selecione o gênero</h3>
             <div class="form-check" ngClass="aplicaCssErro('gender')">
@@ -27,12 +27,18 @@
             </div>
         </div>
 
-        <button type="submit" class="btn">Pesquisar</button>
+        <button type="submit" class="btn botao">Pesquisar</button>
 
     </form>       
 </section>
 
-<section>
-    <h3></h3>
+<section class="box__users">
+    <div class="box__users-card" *ngFor="let item of listaUsuarios">
+        <img class="user__image" src="{{item.picture.medium}}" alt="Imagem do Usuário">
+        <h3>Nome: {{item.name.title}} {{item.name.first}} {{item.name.last}}</h3>
+        <p>Gênero: {{item.gender}}</p>
+        <p>Nacionalidade: {{item.location.country}}</p>
+        <p>E-mail: {{item.email}}</p>
+    </div>
 </section>
 
