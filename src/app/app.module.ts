@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { PesquisaUsuarioComponent } from './pesquisa-usuario/pesquisa-usuario.component';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { PesquisaUsuarioComponent } from './pesquisa-usuario/pesquisa-usuario.co
     AppComponent,
     HeaderComponent,
     PesquisaUsuarioComponent,
-    HomeComponent,
+    
     
   ],
   imports: [

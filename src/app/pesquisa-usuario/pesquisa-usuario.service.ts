@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,8 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class PesquisaUsuarioService {
 
-  constructor(    
+  constructor(  
+    private http: HttpClient  
   ) { }
+  
+  getPesquisa(){
+    return this.http.get('https://randomuser.me/api/')
+    }
 
   getListaGender(){
    return [
@@ -24,5 +30,6 @@ export class PesquisaUsuarioService {
       {'nome': 'Estados Unidos', 'valor': 'United States'} 
     ]
   }
+
 
 }

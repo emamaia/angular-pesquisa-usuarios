@@ -13,10 +13,11 @@ export class PesquisaUsuarioComponent implements OnInit {
   listaGender = [];
 
   valorBusca: any;
- 
-  constructor(
+  usuarios: any;
+
+   constructor(
       private pesquisaUsuarioService: PesquisaUsuarioService, 
-      
+            
   ) {
     console.log(pesquisaUsuarioService);
    
@@ -25,13 +26,18 @@ export class PesquisaUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.listaPaises = this.pesquisaUsuarioService.getListaPaises();
     this.listaGender = this.pesquisaUsuarioService.getListaGender();
+    this.pesquisaUsuarioService.getPesquisa()
+    .subscribe(response => {
+     this.usuarios = response;
+     console.log(this.usuarios.results)
+    })
   }
-
-
+  
+  
   onSubmit(form) {
-      this.valorBusca = form.value;
-     console.log(this.valorBusca)
-     
+    this.valorBusca = form.value;
+    console.log(this.valorBusca);      
+         
   }
 
   onCheckBoxChange(event) {
