@@ -70,14 +70,12 @@ export class PesquisaUsuarioComponent implements OnInit {
         error => {
           this.loading = false;
           this.erroApi = true;
-
         }
       )
 
       if(form.submitted){
         form.reset()
       }
-
   }
 
 
