@@ -17,7 +17,7 @@ export class PesquisaUsuarioComponent implements OnInit {
 
   valorBusca: any;
   usuarios: any;
-  salvaPesquisa: [];
+  salvaPesquisa: any;
 
   erro = false;
   salvaPesquisaTexto = false
