@@ -98,7 +98,7 @@ export class PesquisaUsuarioComponent implements OnInit {
   onClick(event) {
     console.log('eu ouvi o click')
     this.salvaPesquisaTexto = !this.salvaPesquisaTexto
-    this.salvaPesquisa = sessionStorage.setItem('listaUsers', JSON.stringify(this.listaUsers));
+    this.salvaPesquisa = sessionStorage.setItem('listaUsuarios', JSON.stringify(this.listaUsuarios));
     console.log('ESSE É O SALVO', this.salvaPesquisa)
   }
 
