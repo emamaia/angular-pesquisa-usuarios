@@ -1,44 +1,63 @@
 <section class="box__form">
 
-        
+
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario ">
         <div class="gender__box">
             <h3 class="pt-4">Selecione o gênero</h3>
-            <div class="form-check" ngClass="aplicaCssErro('gender')">
+            <div class="form-check">
                 <label class="form-check-label" for="gender">
                     <div id="gender" class="row">
                         <div *ngFor="let item of listaGender">
                             <label for="{{item.valor}}" class="radio-inline">
-                                <input class="form-check-input" [value]="item.valor" type="radio" id="{{item.valor}}" name="gender" ngModel>
+                                <input class="form-check-input" [value]="item.valor" type="radio" id="{{item.valor}}"
+                                    name="gender" ngModel required>
                                 {{item.nome}}
                             </label>
-                        </div>                        
+                        </div>
                     </div>
                 </label>
             </div>
+            <span class="text-center text-danger p-3" *ngIf="erro">
+                Selecione uma opção
+            </span>
+
         </div>
-        
-        <div class="country__box" >
+
+        <div class="country__box">
             <h3 class="pt-3">Selecione o país:</h3>
             <div *ngFor="let item of listaPaises" class="p-1">
-                <input type="checkbox" id="{{item.valor}}" 
-                 name={{item.valor}} ngModel>
+                <input type="checkbox" id="{{item.valor}}" name={{item.valor}} ngModel>
                 <label for="{{item.valor}}">{{item.nome}}</label>
             </div>
+
         </div>
 
-        <button type="submit" class="btn botao">Pesquisar</button>
+        <button type="submit" class="btn button__dados">Pesquisar</button>
 
-    </form>       
+    </form>
+
 </section>
 
-<section  class="box__users">
+<div class="box__button-salvar">
+    <button type="click" (click)="onClick('&event')" class="btn button__salvar">Salvar dados</button>
+
+    <h3 class="text-center p-3" name="salvaPsquisa" *ngIf='salvaPesquisaTexto'>Pesquisa salva no Session Storage</h3>
+</div>
+
+<section class="box__users">
+
+    <div class="spinner-border" role="status" *ngIf="loading">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div *ngIf="erroApi">
+        <h2>Error </h2>
+    </div>
+
     <div class="box__users-card" *ngFor="let item of listaUsuarios">
         <img class="user__image" src="{{item.picture.medium}}" alt="Imagem do Usuário">
-        <h3>Nome: {{item.name.title}} {{item.name.first}} {{item.name.last}}</h3>
+        <h3>{{item.name.title}} {{item.name.first}} {{item.name.last}}</h3>
         <p>Gênero: {{item.gender}}</p>
         <p>Nacionalidade: {{item.location.country}}</p>
         <p>E-mail: {{item.email}}</p>
     </div>
 </section>
-

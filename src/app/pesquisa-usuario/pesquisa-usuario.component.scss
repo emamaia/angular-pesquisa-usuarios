@@ -19,12 +19,27 @@ label{
     border: #6e5631 solid 2px;
 }
 
-.botao{
+.button__dados{
     background-color: #6e5631;
     color: #ffffff;
     margin-top: 30px;
     font-size: 1.1rem;
     width: 150px;
+}
+
+.box__button-salvar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button__salvar{
+    background-color: #6e5631;
+    color: #ffffff;
+    font-size: 1.1rem;
+    width: 30%;
+    margin-top: 20px;
 }
 
 .box__users{
@@ -50,10 +65,10 @@ label{
     width: 100px;
 }
 
-// .hidden{
-//     display: none;
-// }
+.hidden{
+    display: none;
+}
 
-// .show{
-//     visibility: reset;
-// }
+.show{
+    visibility: reset;
+}

@@ -12,6 +12,8 @@ export class PesquisaUsuarioService {
   
   filtroApi(value){
     return this.http.get(`https://randomuser.me/api/?results=20${value}`)
+    // throwError(new Error('Erro genérico'));
+        
   }
   
   getPesquisa(){
