@@ -74,6 +74,10 @@ export class PesquisaUsuarioComponent implements OnInit {
         }
       )
 
+      if(form.submitted){
+        form.reset()
+      }
+
   }
 
 
@@ -90,7 +94,6 @@ export class PesquisaUsuarioComponent implements OnInit {
       }
 
     }
-
     return filtro
   }
 
@@ -101,5 +104,6 @@ export class PesquisaUsuarioComponent implements OnInit {
     console.log('ESSE É O SALVO', this.salvaPesquisa)
   }
 
+ 
 
 }

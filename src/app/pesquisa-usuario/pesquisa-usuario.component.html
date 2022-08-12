@@ -1,7 +1,7 @@
 <section class="box__form">
 
 
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario ">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="formulario">
         <div class="gender__box">
             <h3 class="pt-4">Selecione o gênero</h3>
             <div class="form-check">
@@ -32,7 +32,7 @@
 
         </div>
 
-        <button type="submit" class="btn button__dados">Pesquisar</button>
+        <button type="submit" class="btn button__dados" (reset)="resetarForm()">Pesquisar</button>
 
     </form>
 
