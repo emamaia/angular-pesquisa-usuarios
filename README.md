@@ -12,9 +12,16 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 2. [x] Usuário deverá utilizar filtros com input tipo radio e checkbox;
 3. [x] Ao usar o filtro, é utilizado uma API randômica e carrega na tela pelo botão 'Pesquisar';
 4. [x] Um segundo botão para salvar dados anteriores no Session Storage;
-5. [x] Tratamento de erro da API;
+5. [x] Tratamento de erro da API. Para verificar o tratamento, comentar a chamada de API no pesquisa-usuario.service.js e descomentar o "throwError(new Error('Erro genérico'));"
 6. [x] O site foi desenvolvido de modo responsivo, UX e estilo por conta do desenvolvedor;
-7. [x] Carregar na tela no máximo 20 usários, contendo foto, nome, gênero, nacionalidade e e-mail.
+7. [x] Carregar na tela no máximo 20 usuários, contendo foto, nome, gênero, nacionalidade e e-mail;
+8. [x] O estilo do projeto foi desenvolvido em SCSS, com o uso do bootstrap em casos pontuais.
+
+## Melhorias
+
+- Separação de componentes, deixando o formulário mais genérico e utilizável, passando informações de filho para pai, utilizando o OutPut(), carregando as informações da API numa Home e não direto na mesma página do formulário;
+- Alterar as varáveis tipo 'any' para interfaces;
+- Melhorar funções de submit, adicionando outras funcçoes e chamando dentro dela.
 
 ## Code scaffolding
 
